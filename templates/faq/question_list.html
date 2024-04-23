@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+	<h3>Question fréquente</h3>
+
+    {% for object in object_list %}
+    	<details>
+            <summary style="background: azure; color: black">{{ object.question_text }}</summary>
+            {% if object.answer_test  %}
+
+                {{ object.answer_text }}
+            {% else %}
+                <span>Aucune réponse pour le moment</span>
+            {% endif %}
+        </details>
+    {% endfor %}
+
+{% endblock %}
